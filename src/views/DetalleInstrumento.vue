@@ -4,33 +4,44 @@
       <b-row>
         <b-col>
           <img
-            style="max-height:400px"
-            :src="'/images/' + instrumentoEncontrado.imagen"
-        /></b-col>
+            style="max-height:600px"
+            :src="'/images/' + instrumentoEncontrado.imagen"/>
+            <b-row >
+                <b-col >
+                    <h2>Descripción</h2>
+                    <h1  >{{instrumentoEncontrado.descripcion}}</h1>
+                </b-col>
+            </b-row>     
+        </b-col>
         <b-col>
           <b-row>
-            <b-col
-              ><h1>{{ instrumentoEncontrado.instrumento }}</h1></b-col
-            >
+            <b-col ><h2>{{ instrumentoEncontrado.cantidadVendida }}</h2></b-col>
           </b-row>
           <b-row>
-            <b-col
-              ><h2>$ {{ instrumentoEncontrado.precio }}</h2></b-col
-            >
+            <b-col><h1>{{ instrumentoEncontrado.instrumento }}</h1></b-col>
           </b-row>
           <b-row>
-            <b-col
-              ><h2>{{ instrumentoEncontrado.marca }}</h2></b-col
-            >
+            <b-col><h1>{{ instrumentoEncontrado.precio }}</h1></b-col>
           </b-row>
+          <b-row>
+            <b-col><h2>{{ instrumentoEncontrado.marca }}</h2></b-col>
+          </b-row>
+          <b-row>
+            <b-col><h2>{{ instrumentoEncontrado.modelo }}</h2></b-col>
+          </b-row>
+            <b-row>
+                <b-col><h1>Costo de envío:</h1>
+                <a href=""></a>
+                </b-col>
+            </b-row>
+         
          
           
-          <b-row style="text-align:center">
+          <b-row>
             <b-col
               ><b-button href="/" variant="outline-primary"
                 >VOLVER</b-button
-              ></b-col
-            >
+              ></b-col>
           </b-row>
         </b-col>
       </b-row>
@@ -50,6 +61,7 @@ export default {
     return {
       instrumentoEncontrado: []
     };
+    
   },
   methods: {
     async getInstrumentoXId() {

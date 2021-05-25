@@ -15,6 +15,7 @@
         <b-button variant="success" href="/productos"
           >conoce nuestros productos</b-button
         >
+        <br>
         <b-img src="/images/local.jpg" fluid alt="Responsive image"></b-img>
       </b-container>
     </b-jumbotron>

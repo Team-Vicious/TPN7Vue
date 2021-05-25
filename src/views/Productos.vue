@@ -6,7 +6,7 @@
           v-for="instrum in instrumData"
          
           :key="instrum.id"
-          style="margin-top:15px"
+          style="margin-top:10px"
         >
           <Instrumentos :instrumentoParam="instrum"></Instrumentos>
         </div>
