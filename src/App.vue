@@ -1,9 +1,24 @@
+
 <template>
-  <div id="app">
-    
+  <div>
+    <NavBar></NavBar> 
     <router-view/>
   </div>
 </template>
+
+<script>
+// @ is an alias to /src
+//en el template pongo la etiqueta del componente que se vera en todas las vistas
+import NavBar from '@/components/NavBar.vue'
+//aca pongo el componente que se vera en todas las vistas
+export default {
+  name: 'App',
+  components: {
+    NavBar   
+   
+  }
+}
+</script>
 
 <style>
 #app {
