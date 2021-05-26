@@ -1,52 +1,54 @@
 <template>
-  <div>
-    <b-container fluid>
+ 
+    <b-container >
       <b-row>
         <b-col>
-          <img
-            style="max-height:600px"
+          <img 
+            
             :src="'/images/' + instrumentoEncontrado.imagen"/>
             <b-row >
                 <b-col >
-                    <h2>Descripción</h2>
-                    <h1  >{{instrumentoEncontrado.descripcion}}</h1>
+                    <h2 class="minAltoImg" >Descripción</h2>
+                    <h1 style="fontSize:15px"  >{{instrumentoEncontrado.descripcion}}</h1>
                 </b-col>
-            </b-row>     
+            </b-row>  
+             <b-row>
+            <b-col
+              ><b-button href="/productos" variant="primary"
+                >VOLVER</b-button
+              ></b-col>
+          </b-row>   
         </b-col>
         <b-col>
+          <br>
           <b-row>
-            <b-col ><h2>{{ instrumentoEncontrado.cantidadVendida }}</h2></b-col>
+            <b-col><h2 style="fontSize:15px">{{ instrumentoEncontrado.cantidadVendida }} Vendidos</h2></b-col>
           </b-row>
           <b-row>
             <b-col><h1>{{ instrumentoEncontrado.instrumento }}</h1></b-col>
           </b-row>
           <b-row>
-            <b-col><h1>{{ instrumentoEncontrado.precio }}</h1></b-col>
+            <b-col><h1 style="color:grey">$ {{ instrumentoEncontrado.precio }}</h1></b-col>
           </b-row>
           <b-row>
-            <b-col><h2>{{ instrumentoEncontrado.marca }}</h2></b-col>
+            <b-col><h2 style="fontSize:15px">Marca: {{ instrumentoEncontrado.marca }}</h2></b-col>
           </b-row>
           <b-row>
-            <b-col><h2>{{ instrumentoEncontrado.modelo }}</h2></b-col>
+            <b-col><h2 style="fontSize:15px">Modelo: {{ instrumentoEncontrado.modelo }}</h2></b-col>
           </b-row>
             <b-row>
-                <b-col><h1>Costo de envío:</h1>
-                <a href=""></a>
+                <b-col><h1 style="fontSize:20px">Costo de envío:</h1>
+
+                <div v-if="instrumentoEncontrado.costoEnvio == 'G'" style="color:green">
+          Envio gratis a todo el pais</div>
+        <div v-else style="color:red"> Envio: $ {{ instrumentoEncontrado.costoEnvio }}</div>
                 </b-col>
-            </b-row>
+            </b-row>      
          
-         
-          
-          <b-row>
-            <b-col
-              ><b-button href="/" variant="outline-primary"
-                >VOLVER</b-button
-              ></b-col>
-          </b-row>
         </b-col>
       </b-row>
     </b-container>
-  </div>
+  
 </template>
 
 
@@ -77,3 +79,11 @@ export default {
   }
 };
 </script>
+
+
+<style scoped>
+.minAltoImg{
+  font-family:Helvetica;
+
+} 
+</style>
